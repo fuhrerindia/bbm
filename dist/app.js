@@ -1,15 +1,18 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = (0, express_1.default)();
-const port = 3300;
-app.get("/", (req, res) => {
-    res.send("hello world");
-    console.log(req);
-});
-app.listen(port, () => {
-    console.log("Running,,,");
-});
+const dotenv_1 = require("dotenv");
+(0, dotenv_1.config)();
+const URL = process.env.DB_HOST;
+// console.log(process.env)
+// const URL: string = process.env.DB_HOST || "/";
+// const client: MongoClient = new MongoClient(URL);
+// const DATABASE: string = "test";
+// async function getData() {
+//   let result = await client.connect();
+//   const DB = result.db(DATABASE);
+//   let collection = DB.collection("sample");
+//   let respons = await collection.find({}).toArray();
+//   console.log(respons);
+// }
+// getData();
+// console.log(URL);
